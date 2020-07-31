@@ -1,7 +1,5 @@
 package com.spring.jta;
 
-import java.math.BigDecimal;
-
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -42,7 +40,7 @@ class XaTransactionApplicationTests {
 	@Test
 	void testService() throws Exception {
 //		ts.creditFromSbi2Hdfc(si.getOne(1), hi.getOne(1), new BigDecimal(1));
-		ts.creditFromHdfc2Sbi(hi.getOne(1), si.getOne(1), new BigDecimal(1));
+//		ts.creditFromHdfc2Sbi(hi.getOne(1), si.getOne(1), new BigDecimal(1));
 	}
 
 }
