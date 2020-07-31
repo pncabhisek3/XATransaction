@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>com.spring</groupId>
 	<artifactId>xa-transaction</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version><!-- 0.0.1-SNAPSHOT -->
 	<packaging>war</packaging>
 	<name>XATransaction</name>
 	<description>Demo project for Spring Boot</description>
@@ -37,7 +37,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -67,7 +66,30 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy-resources</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.basedir}/src/main/webapp/xa</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${project.basedir}/../ngXaTrx/dist/ngXaTrx</directory>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
 		</plugins>
+
 	</build>
 
 </project>
