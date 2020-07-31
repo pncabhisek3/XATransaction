@@ -43,35 +43,6 @@ public class SbiConfig {
 		return ds;
 	}
 
-//	@Autowired
-//	@Bean(name = "sbiSessionFactory")
-//	public SessionFactory getSessionFactory(@Qualifier("sbiDS") DataSource dataSource) throws Exception {
-//		Properties properties = new Properties();
-//
-//		// See: application.properties
-//		properties.put("hibernate.show-sql", env.getProperty("spring.jpa.show-sql"));
-//		properties.put("hibernate.hbm2ddl.auto", env.getProperty("spring.jpa.hibernate.ddl-auto"));
-//		properties.put("hibernate.dialect", env.getProperty("spring.jpa.properties.hibernate.dialect"));
-//
-//		LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
-//		factoryBean.setPackagesToScan(new String[] { "com.spring.jta" });
-//		factoryBean.setDataSource(dataSource);
-//		factoryBean.setHibernateProperties(properties);
-//		factoryBean.afterPropertiesSet();
-//		SessionFactory sf = factoryBean.getObject();
-//		System.out.println("## Sbi getSessionFactory: " + sf);
-//		return sf;
-//	}
-//
-//	@Autowired
-//	@Bean(name = "sbiTx")
-//	public HibernateTransactionManager getTransactionManager(
-//			@Qualifier("sbiSessionFactory") SessionFactory sessionFactory) {
-//		HibernateTransactionManager transactionManager = new HibernateTransactionManager(sessionFactory);
-//		System.out.println("HibernateTrxManager: " + transactionManager);
-//		return transactionManager;
-//	}
-
 	// 3. EntityManager configuration.
 	@Bean("sbiFA")
 	public LocalContainerEntityManagerFactoryBean sbiFA() {
